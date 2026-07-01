@@ -1,0 +1,68 @@
+/* =========================================================
+   RESPONSIVE FINE-TUNING — 360 / 768 / 1024 / 1440
+   ========================================================= */
+
+/* ---------- BASE / MOBILE (360px+) ---------- */
+.header-inner{ height: 70px; }
+.brand span{ font-size: 1.05rem; }
+.brand span small{ display:none; }
+.page-hero{ margin-top: 70px; padding: var(--space-6) 0 var(--space-5); }
+
+.hero-section{ padding-top: calc(70px + var(--space-6)); }
+
+.split-section{
+  display:flex; flex-direction:column; gap: var(--space-5);
+}
+
+.hero-content h1{ font-size: clamp(1.9rem, 1.5rem + 2.8vw, 2.4rem); }
+
+.cta-band{ padding: var(--space-6) var(--space-4); }
+.cta-band .cta-actions .btn{ width:100%; }
+@media (min-width:480px){ .cta-band .cta-actions .btn{ width:auto; } }
+
+.footer-top{ text-align: start; }
+
+table.compare-table{ display:block; overflow-x:auto; white-space:nowrap; border-radius: var(--radius-md); }
+
+/* Tabs that need horizontal scroll on mobile instead of wrap */
+.scroll-tabs{
+  display:flex; gap:.6rem; overflow-x:auto; padding-bottom:.5rem;
+  -ms-overflow-style:none; scrollbar-width:none;
+}
+.scroll-tabs::-webkit-scrollbar{ display:none; }
+.scroll-tabs .tab-btn{ flex-shrink:0; }
+
+/* ---------- TABLET (768px+) ---------- */
+@media (min-width:768px){
+  .header-inner{ height:76px; }
+  .brand span small{ display:block; font-size:.68rem; font-weight:400; color: var(--text-muted); }
+  .page-hero{ margin-top:76px; padding: var(--space-7) 0 var(--space-6); }
+  .hero-section{ padding-top: calc(76px + var(--space-7)); }
+
+  .split-section{ flex-direction:row; align-items:center; }
+  .split-section > *{ flex:1; }
+
+  .stats-band{ grid-template-columns: repeat(4,1fr); }
+  .footer-top{ grid-template-columns: repeat(3,1fr); }
+  .footer-brand{ grid-column: span 3; }
+}
+
+/* ---------- DESKTOP (1024px+) ---------- */
+@media (min-width:1024px){
+  .footer-top{ grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; }
+  .footer-brand{ grid-column: span 1; }
+  .hero-section{ padding-top: 0; min-height: 90vh; display:flex; align-items:center; }
+  section.lg-py-extra{ padding: var(--space-8) 0; }
+}
+
+/* ---------- LARGE DESKTOP (1440px+) ---------- */
+@media (min-width:1440px){
+  .container{ max-width:1360px; }
+  .hero-content h1{ font-size: 3.4rem; }
+}
+
+/* ---------- universal overflow guards ---------- */
+html, body{ max-width:100%; }
+.container, .grid, .card, img, table{ max-width:100%; }
+h1,h2,h3,h4,p,a,span{ overflow-wrap: break-word; word-break: break-word; }
+table{ width:100%; }

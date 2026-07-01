@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Virtual Try-On | Optique & Co.</title>
+<meta name="description" content="Preview eyeglass frames on your own face with our virtual try-on tool. Upload a photo or use your camera for an instant style preview.">
+<meta property="og:title" content="Virtual Try-On | Optique & Co.">
+<meta property="og:description" content="Try frames virtually before you buy — instant preview, no commitment.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="virtual-try-on.html">
+<meta property="og:image" content="https://picsum.photos/seed/tryonog/1200/630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="virtual-try-on.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%226%22 cy=%2215%22 r=%225%22 fill=%22%231E3A5F%22/><circle cx=%2218%22 cy=%2215%22 r=%225%22 fill=%22%234A90E2%22/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<header id="main-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Virtual Try-On</span></div>
+    <h1>Virtual Try-On</h1>
+    <p>Preview how a frame looks on you — instantly. This is a frontend demonstration of the experience.</p>
+  </div>
+</section>
+
+<section class="lg-py-extra">
+  <div class="container">
+    <div class="try-on-stage reveal">
+      <div>
+        <div class="before-after-toggle">
+          <button class="tab-btn active" data-ba-target="before">Original</button>
+          <button class="tab-btn" data-ba-target="after">With Frame</button>
+        </div>
+        <div class="try-on-camera" data-upload-trigger>
+          <img class="preview-frame shown" data-state="before" data-frame="none" src="assets/images/eyewear_hero.png" alt="Model face without eyewear, base preview">
+          <img class="preview-frame" data-state="after" data-frame="frame1" src="assets/images/men_frames.png" alt="Model wearing Harbor Rectangle frame preview">
+          <img class="preview-frame" data-state="after" data-frame="frame2" src="assets/images/women_frames.png" alt="Model wearing Linnea Round frame preview">
+          <img class="preview-frame" data-state="after" data-frame="frame3" src="assets/images/sunglasses.png" alt="Model wearing Skyline Aviator frame preview">
+          <img class="preview-frame" data-state="after" data-frame="frame4" src="assets/images/women_frames.png" alt="Model wearing Noor Butterfly frame preview">
+        </div>
+        <div class="flex gap-3" style="margin-top:var(--space-4);">
+          <button class="btn btn-outline btn-block" data-upload-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            Upload Your Photo
+          </button>
+          <button class="btn btn-primary btn-block" data-upload-trigger>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Use Camera
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h3 style="margin-bottom:var(--space-3);">Select A Frame To Preview</h3>
+        <p class="text-secondary-c" style="margin-bottom:var(--space-4); font-size:.92rem;">Tap a frame thumbnail to see it applied to the preview image.</p>
+        <div class="try-on-frame-list">
+          <div class="frame-thumb active" data-preview="frame1"><img src="assets/images/men_frames.png" alt="Harbor Rectangle frame thumbnail"></div>
+          <div class="frame-thumb" data-preview="frame2"><img src="assets/images/women_frames.png" alt="Linnea Round frame thumbnail"></div>
+          <div class="frame-thumb" data-preview="frame3"><img src="assets/images/sunglasses.png" alt="Skyline Aviator frame thumbnail"></div>
+          <div class="frame-thumb" data-preview="frame4"><img src="assets/images/women_frames.png" alt="Noor Butterfly frame thumbnail"></div>
+        </div>
+        <div class="card" style="margin-top:var(--space-5);">
+          <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="8"/></svg></span>
+          <h3>How It Works</h3>
+          <p>Upload a front-facing photo or use your camera. Our preview engine maps frame proportions to your face for a realistic style reference — no purchase required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--surface-alt);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <span class="eyebrow" style="justify-content:center;">Loved By Customers</span>
+      <h2 class="section-title">Why Try Before You Buy</h2>
+    </div>
+    <div class="grid grid-3 reveal-stagger">
+      <div class="card text-center">
+        <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span>
+        <h3>Buy With Confidence</h3>
+        <p>See your style before committing — fewer returns, more satisfaction.</p>
+      </div>
+      <div class="card text-center">
+        <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
+        <h3>Instant Preview</h3>
+        <p>No waiting — see results in seconds, right in your browser.</p>
+      </div>
+      <div class="card text-center">
+        <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span>
+        <h3>Compare Multiple Styles</h3>
+        <p>Switch between frames instantly to compare side by side.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="cta-band reveal">
+      <h2>Found Your Frame?</h2>
+      <p>Book an eye test to finalize your prescription and order with confidence.</p>
+      <div class="cta-actions">
+        <a href="eye-test-booking.html" class="btn btn-secondary">Book Eye Test</a>
+        <a href="frames.html" class="btn btn-outline">Shop All Frames</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>

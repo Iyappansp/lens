@@ -1,0 +1,55 @@
+/* =========================================================
+   DARK MODE — supplemental overrides
+   Most theming handled via CSS variables in style.css.
+   This file covers component-specific dark adjustments.
+   ========================================================= */
+
+[data-theme="dark"] .page-hero{
+  background: linear-gradient(160deg, #16242C 0%, var(--surface-alt) 75%);
+}
+
+[data-theme="dark"] .card-media,
+[data-theme="dark"] .auth-visual{
+  background: var(--surface-secondary-tint);
+}
+
+[data-theme="dark"] .hero-section{
+  background: radial-gradient(circle at 80% 0%, rgba(74,144,226,.12), transparent 55%), var(--surface-alt);
+}
+
+[data-theme="dark"] .stat-item .stat-number{ color: var(--color-accent); }
+
+[data-theme="dark"] .shop-filter-bar,
+[data-theme="dark"] .booking-summary,
+[data-theme="dark"] .try-on-stage{
+  background: var(--surface-secondary-tint);
+}
+
+[data-theme="dark"] .form-control{
+  background: var(--surface-alt);
+}
+
+[data-theme="dark"] .navbar-blur{
+  background: rgba(17,24,39,.85);
+  backdrop-filter: blur(10px);
+}
+
+[data-theme="dark"] img.tone-on-dark{
+  filter: brightness(.92) contrast(1.02);
+}
+
+[data-theme="dark"] .compare-table th{
+  background: var(--surface-secondary-tint);
+}
+
+[data-theme="dark"] .brand-logo-card{
+  filter: invert(1) grayscale(1) opacity(.85);
+}
+[data-theme="dark"] .brand-logo-card:hover{
+  filter: none;
+}
+
+/* Smooth theme transition applied globally */
+body, .site-header, .card, .form-control, .accordion-item, .testimonial-card{
+  transition: background var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+}

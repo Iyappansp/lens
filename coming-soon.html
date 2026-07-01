@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coming Soon | Optique & Co.</title>
+<meta name="description" content="Something new is launching soon at Optique & Co. Sign up to be notified.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="coming-soon.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%226%22 cy=%2215%22 r=%225%22 fill=%22%231E3A5F%22/><circle cx=%2218%22 cy=%2215%22 r=%225%22 fill=%22%234A90E2%22/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="state-page">
+  <div class="auth-top-controls" style="position:fixed;">
+    <button class="icon-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+    </button>
+    <button class="icon-toggle lang-toggle" id="rtlToggleBtn" aria-label="Toggle language direction" title="Toggle RTL/LTR">
+      <span id="rtlToggleLabel">EN</span>
+    </button>
+  </div>
+
+  <span class="badge badge-accent" style="margin-bottom:var(--space-4);">Launching Soon</span>
+  <h1>Something New Is On The Way</h1>
+  <p>We're crafting a new experience for Optique & Co. Sign up below to be the first to know when it launches.</p>
+
+  <div class="countdown-row" id="countdownRow">
+    <div class="countdown-box"><div class="num" id="cdDays">00</div><div class="lbl">Days</div></div>
+    <div class="countdown-box"><div class="num" id="cdHours">00</div><div class="lbl">Hours</div></div>
+    <div class="countdown-box"><div class="num" id="cdMinutes">00</div><div class="lbl">Minutes</div></div>
+    <div class="countdown-box"><div class="num" id="cdSeconds">00</div><div class="lbl">Seconds</div></div>
+  </div>
+
+  <form id="comingSoonForm" style="display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center;max-width:420px;">
+    <input type="email" required placeholder="Enter your email" class="form-control" style="max-width:260px;" aria-label="Email address">
+    <button type="submit" class="btn btn-primary">Notify Me</button>
+  </form>
+
+  <a href="index.html" class="btn btn-outline" style="margin-top:var(--space-5);">Back To Homepage</a>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script>
+  (function(){
+    var launchDate = new Date();
+    launchDate.setDate(launchDate.getDate() + 14);
+    function update(){
+      var now = new Date().getTime();
+      var distance = launchDate.getTime() - now;
+      if (distance < 0) distance = 0;
+      var d = Math.floor(distance / (1000*60*60*24));
+      var h = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+      var m = Math.floor((distance % (1000*60*60)) / (1000*60));
+      var s = Math.floor((distance % (1000*60)) / 1000);
+      document.getElementById('cdDays').textContent = String(d).padStart(2,'0');
+      document.getElementById('cdHours').textContent = String(h).padStart(2,'0');
+      document.getElementById('cdMinutes').textContent = String(m).padStart(2,'0');
+      document.getElementById('cdSeconds').textContent = String(s).padStart(2,'0');
+    }
+    update();
+    setInterval(update, 1000);
+
+    document.getElementById('comingSoonForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      this.reset();
+      if(window.showOptiqueToast) window.showOptiqueToast("Thanks! We'll notify you at launch.");
+    });
+  })();
+</script>
+</body>
+</html>

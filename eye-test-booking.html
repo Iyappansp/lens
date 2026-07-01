@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Eye Test | Optique & Co.</title>
+<meta name="description" content="Schedule a comprehensive eye examination with our certified optometrists. Choose your preferred date, time, and share your vision concerns.">
+<meta property="og:title" content="Book Eye Test | Optique & Co.">
+<meta property="og:description" content="Schedule your eye test appointment in minutes.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="eye-test-booking.html">
+<meta property="og:image" content="https://picsum.photos/seed/bookingog/1200/630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="eye-test-booking.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%226%22 cy=%2215%22 r=%225%22 fill=%22%231E3A5F%22/><circle cx=%2218%22 cy=%2215%22 r=%225%22 fill=%22%234A90E2%22/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<header id="main-header"></header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>/</span><span>Book Eye Test</span></div>
+    <h1>Book Your Eye Test</h1>
+    <p>Schedule a comprehensive vision exam with our certified optometrists in just a few steps.</p>
+  </div>
+</section>
+
+<section class="lg-py-extra">
+  <div class="container">
+    <div class="booking-grid">
+      <div class="booking-card reveal">
+        <div class="booking-steps">
+          <div class="booking-step active"><span class="step-num">1</span> Your Details</div>
+          <div class="booking-step"><span class="step-num">2</span> Schedule</div>
+          <div class="booking-step"><span class="step-num">3</span> Confirm</div>
+        </div>
+
+        <form id="bookingForm" data-demo-form data-success-message="Appointment request received! We'll confirm shortly.">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fullName">Full Name</label>
+              <input type="text" id="fullName" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="age">Age</label>
+              <input type="number" id="age" min="1" max="120" class="form-control" placeholder="e.g. 28" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="contact">Contact Number</label>
+              <input type="tel" id="contact" class="form-control" placeholder="+1 (555) 000-0000" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="emailBooking">Email Address</label>
+              <input type="email" id="emailBooking" class="form-control" placeholder="you@email.com" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="preferredDate">Preferred Date</label>
+              <input type="date" id="preferredDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Preferred Time</label>
+              <div class="time-slot-grid">
+                <button type="button" class="time-slot">9:00 AM</button>
+                <button type="button" class="time-slot">11:00 AM</button>
+                <button type="button" class="time-slot">1:00 PM</button>
+                <button type="button" class="time-slot">3:00 PM</button>
+                <button type="button" class="time-slot">5:00 PM</button>
+                <button type="button" class="time-slot">6:30 PM</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="eyeConcern">Eye Concern (Optional)</label>
+            <textarea id="eyeConcern" class="form-control" placeholder="Tell us about any vision concerns, e.g. blurry vision, headaches, screen strain..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm Appointment</button>
+        </form>
+      </div>
+
+      <div>
+        <div class="booking-summary reveal">
+          <h4>Appointment Summary</h4>
+          <div class="summary-row"><span>Name</span><span id="summaryName">—</span></div>
+          <div class="summary-row"><span>Date</span><span id="summaryDate">—</span></div>
+          <div class="summary-row"><span>Time</span><span id="summaryTime">—</span></div>
+          <div class="summary-row"><span>Service</span><span>Comprehensive Eye Test</span></div>
+          <div class="summary-row" style="border-bottom:none;"><span>Duration</span><span>30–45 mins</span></div>
+          <div style="margin-top:var(--space-5);">
+            <span class="badge badge-success">Free for Insurance Members</span>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:var(--space-5);">
+          <span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.8 19.8 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13 1 .36 1.94.69 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.87.33 1.81.56 2.81.69A2 2 0 0122 16.92z"/></svg></span>
+          <h3>Need Help?</h3>
+          <p>Call us at <strong>+1 (555) 234-5678</strong> or visit our Contact page for assistance booking.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="main-footer"></footer>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/animations.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | Optique & Co.</title>
+<meta name="description" content="Log in to your Optique & Co. account to manage orders, appointments, and prescriptions.">
+<meta name="robots" content="noindex">
+<link rel="canonical" href="login.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22><circle cx=%226%22 cy=%2215%22 r=%225%22 fill=%22%231E3A5F%22/><circle cx=%2218%22 cy=%2215%22 r=%225%22 fill=%22%234A90E2%22/></svg>">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+<link rel="stylesheet" href="assets/css/components.css">
+<link rel="stylesheet" href="assets/css/dark-mode.css">
+<link rel="stylesheet" href="assets/css/rtl.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+
+<div class="auth-wrapper">
+  <div class="auth-visual">
+    <img src="https://picsum.photos/seed/authvisual1/900/1200" alt="Premium eyewear display in showroom">
+    <div class="auth-visual-content">
+      <h3>Welcome Back To Optique & Co.</h3>
+      <p>Manage your orders, track appointments, and revisit your saved frames — all in one place.</p>
+    </div>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-top-controls">
+      <button class="icon-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon-moon"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <button class="icon-toggle lang-toggle" id="rtlToggleBtn" aria-label="Toggle language direction" title="Toggle RTL/LTR">
+        <span id="rtlToggleLabel">EN</span>
+      </button>
+    </div>
+
+    <div class="auth-card">
+      <div class="auth-logo">
+        <a href="index.html" class="brand">
+          <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="15" r="4"/><circle cx="18" cy="15" r="4"/><path d="M10 15h4M2 13l2-7a2 2 0 012-1h0M22 13l-2-7a2 2 0 00-2-1h0"/></svg></span>
+          <span>Optique &amp; Co.</span>
+        </a>
+      </div>
+      <h2>Welcome Back</h2>
+      <p class="auth-sub">Log in to continue to your account</p>
+
+      <div class="social-login-row">
+        <button type="button" class="social-btn">
+          <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.6 29.3 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.2-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.6 16 19 13 24 13c3.1 0 5.9 1.2 8 3.1l5.7-5.7C34.6 6.1 29.6 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.4 26.7 36 24 36c-5.3 0-9.7-3.4-11.3-8.1l-6.6 5.1C9.6 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.3-2.3 4.2-4.2 5.6l6.2 5.2C40.9 36 44 30.6 44 24c0-1.2-.1-2.4-.4-3.5z"/></svg>
+          Google
+        </button>
+        <button type="button" class="social-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16.36 1.07c.1 1.07-.3 2.13-1 2.96-.71.86-1.85 1.52-2.97 1.42-.12-1.04.36-2.13 1.04-2.92.72-.83 1.92-1.46 2.93-1.46zM20.6 17.1c-.55 1.23-.82 1.78-1.53 2.86-1 1.53-2.4 3.44-4.15 3.46-1.55.02-1.95-1.01-4.05-1-2.1.01-2.54 1.02-4.1.99-1.75-.03-3.07-1.74-4.07-3.27C-.2 15.78-.85 9.66 2.12 6.32c1.43-1.6 3.36-2.6 5.16-2.63 1.6-.02 2.62 1.04 4 1.04 1.37 0 2.18-1.04 4.1-1.04 1.55 0 3.2.84 4.4 2.28-3.86 2.15-3.24 7.6.82 9.13z"/></svg>
+          Apple
+        </button>
+      </div>
+      <div class="divider-or">or login with email</div>
+
+      <form data-demo-form data-success-message="Welcome back! Logging you in...">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Email Address</label>
+          <input type="email" id="loginEmail" class="form-control" placeholder="you@email.com" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Password</label>
+          <div class="input-icon-wrap">
+            <input type="password" id="loginPassword" class="form-control" placeholder="Enter your password" required>
+            <button type="button" class="input-icon-btn" data-toggle-password="loginPassword" aria-label="Show password">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+            </button>
+          </div>
+        </div>
+        <div class="auth-meta-row">
+          <label class="checkbox-row"><input type="checkbox"> Remember Me</label>
+          <a href="forgot-password.html">Forgot Password?</a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+      </form>
+
+      <p class="auth-footer-text">Don't have an account? <a href="signup.html">Sign up</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/main.js"></script>
+<script src="assets/js/products.js"></script>
+</body>
+</html>

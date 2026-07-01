@@ -1,0 +1,56 @@
+/* =========================================================
+   RTL SUPPORT
+   Logical properties handle most flips automatically.
+   This file covers exceptions needing explicit mirroring.
+   ========================================================= */
+
+[dir="rtl"] body{ font-family: var(--font-body); }
+
+[dir="rtl"] .main-nav a::after{ left:auto; right:0; }
+
+[dir="rtl"] .icon-toggle svg.icon-arrow,
+[dir="rtl"] .btn svg.icon-arrow,
+[dir="rtl"] .breadcrumb svg{
+  transform: scaleX(-1);
+}
+
+[dir="rtl"] .nav-dropdown > a svg{ margin-inline-start: 0; }
+
+[dir="rtl"] .hero-split,
+[dir="rtl"] .split-section{
+  direction: rtl;
+}
+
+[dir="rtl"] .testimonial-card .author{ flex-direction: row-reverse; }
+[dir="rtl"] .footer-newsletter form{ direction: rtl; }
+
+[dir="rtl"] .stat-item,
+[dir="rtl"] .card,
+[dir="rtl"] .accordion-header{
+  text-align: right;
+}
+
+[dir="rtl"] .form-row{ direction: rtl; }
+
+[dir="rtl"] .mobile-nav > ul > li > a svg{ transform: scaleX(-1); }
+
+[dir="rtl"] .checkbox-row{ direction: rtl; }
+
+[dir="rtl"] .slider-track{ direction: rtl; }
+
+[dir="rtl"] .compare-table{ direction: rtl; }
+
+[dir="rtl"] .timeline-line{ right: 28px; left: auto; }
+[dir="rtl"] .timeline-item{ padding-inline-start:0; padding-inline-end: 70px; }
+[dir="rtl"] .timeline-dot{ right: 20px; left: auto; }
+
+[dir="rtl"] .face-shape-tabs,
+[dir="rtl"] .lens-tabs{ direction: rtl; }
+
+/* Keep numerals / counters LTR even within RTL text */
+[dir="rtl"] .stat-number,
+[dir="rtl"] .price-amount{
+  direction: ltr;
+  unicode-bidi: isolate;
+  display: inline-block;
+}

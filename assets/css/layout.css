@@ -131,9 +131,17 @@
   width:42px; height:42px;
   border-radius:50%;
   background: var(--surface-secondary-tint);
+  color: var(--text-primary);
   border:none;
   align-items:center; justify-content:center;
   flex-shrink:0;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+.mobile-menu-btn:hover{
+  background: var(--color-secondary-dark);
+}
+[data-theme="dark"] .mobile-menu-btn:hover{
+  background: var(--border-color);
 }
 .mobile-menu-btn svg{ width:20px; height:20px; }
 
@@ -156,7 +164,15 @@
   font-family: var(--font-heading); font-weight:500; font-size:1.05rem;
   border-bottom:1px solid var(--border-color);
   color: var(--text-primary);
+  border-inline-start: 4px solid transparent;
+  transition: all var(--transition-fast);
 }
+.mobile-nav > ul > li > a.active{
+  color: var(--color-accent) !important;
+  border-inline-start-color: var(--color-accent);
+  padding-inline-start: 0.75rem !important;
+}
+
 .mobile-nav .mobile-submenu{
   display:none;
   padding-inline-start: 1rem;

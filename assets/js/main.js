@@ -18,6 +18,8 @@
         { label: "Home 2", href: "home-2.html" },
       ],
     },
+        { label: "About", href: "about.html", match: ["about.html"] },
+
     {
       label: "Shop",
       href: "frames.html",
@@ -35,7 +37,6 @@
     { label: "Virtual Try-On", href: "virtual-try-on.html", match: ["virtual-try-on.html"] },
     { label: "Offers", href: "offers.html", match: ["offers.html"] },
     { label: "Insurance", href: "insurance-benefits.html", match: ["insurance-benefits.html"] },
-    { label: "About", href: "about.html", match: ["about.html"] },
     { label: "Contact", href: "contact.html", match: ["contact.html"] },
   ];
 

@@ -187,7 +187,7 @@
 .lens-feature-list{ display:flex; flex-direction:column; gap: var(--space-3); margin-top: var(--space-4); }
 .lens-feature-list li{ display:flex; align-items:flex-start; gap:.7rem; font-size:.93rem; color: var(--text-secondary); }
 .lens-feature-list .li-icon{ width:26px; height:26px; border-radius:50%; background: var(--color-secondary); color: var(--color-primary); display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:.1rem; }
-[data-theme="dark"] .lens-feature-list .li-icon{ background: var(--surface-secondary-tint); }
+[data-theme="dark"] .lens-feature-list .li-icon{ background: var(--color-accent); color: #FFFFFF; }
 .lens-feature-list .li-icon svg{ width:14px; height:14px; }
 
 /* ---------- VIRTUAL TRY-ON ---------- */
@@ -444,6 +444,14 @@
 .timeline-item h4{ margin-bottom:.4rem; }
 .timeline-item p{ color: var(--text-secondary); font-size:.92rem; line-height:1.6; }
 .timeline-item .timeline-num{ font-family: var(--font-heading); font-size:.78rem; font-weight:700; color: var(--color-accent); display:block; margin-bottom:.3rem; }
+
+/* Timeline dark mode visibility */
+[data-theme="dark"] .timeline-line{ background: rgba(255,255,255,0.18); }
+[data-theme="dark"] .timeline-dot{
+  background: var(--color-accent); border-color: var(--surface-alt);
+  box-shadow: 0 0 0 2px var(--color-accent), 0 0 12px rgba(74,144,226,0.35);
+}
+
 
 /* ---------- 404 / COMING SOON ---------- */
 .state-page{

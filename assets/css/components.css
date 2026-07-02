@@ -151,6 +151,7 @@
   padding: 1rem 1.3rem;
   min-width:108px;
   transition: all var(--transition-fast);
+  color: var(--text-secondary);
 }
 .face-tab-btn .shape-icon{ width:34px; height:34px; }
 .face-tab-btn span{ font-family: var(--font-heading); font-size:.85rem; font-weight:600; }

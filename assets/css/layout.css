@@ -191,7 +191,7 @@ body.menu-open{ overflow:hidden; }
   .header-cta-group .btn:not(.btn-icon){ display:none; }
   .mobile-menu-btn{ display:flex; }
 }
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .site-header .icon-toggle:not(#mobileMenuBtn) { display: none; }
 }
 @media (min-width: 1024px){

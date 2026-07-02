@@ -298,6 +298,22 @@ section{ padding: var(--space-7) 0; position:relative; }
 [data-theme="dark"] .card-icon{ background: var(--surface-secondary-tint); }
 .card:hover .card-icon{ background: var(--color-primary); color:#fff; transform: rotate(-6deg) scale(1.05); }
 .card-icon svg{ width:26px; height:26px; }
+.card-icon.has-image{
+  background: transparent !important;
+  border: none;
+  overflow: hidden;
+}
+.card-icon.has-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transform: scale(1.6);
+  transition: transform var(--transition-base);
+}
+.card:hover .card-icon.has-image img{
+  transform: scale(1.8);
+}
 
 .card h3{ font-size:1.2rem; margin-bottom:.5rem; }
 .card p{ color: var(--text-secondary); font-size:.95rem; line-height:1.6; }

@@ -51,7 +51,7 @@ table.compare-table{ display:block; overflow-x:auto; white-space:nowrap; border-
 @media (min-width:1024px){
   .footer-top{ grid-template-columns: 1.4fr 1fr 1fr 1fr 1.2fr; }
   .footer-brand{ grid-column: span 1; }
-  .hero-section{ padding-top: 0; min-height: 90vh; display:flex; align-items:center; }
+  .hero-section{ padding-top: 86px; min-height: 90vh; display:flex; align-items:center; }
   section.lg-py-extra{ padding: var(--space-8) 0; }
 }
 

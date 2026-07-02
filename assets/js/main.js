@@ -20,23 +20,17 @@
     },
     {
       label: "Shop",
-      href: "#",
-      match: ["frames.html"],
-      children: [
-        { label: "All Frames", href: "frames.html" },
-        { label: "Premium Sunglasses", href: "frames.html#sunglasses" },
-        { label: "Kids Eyewear", href: "frames.html#kids" },
-        { label: "Brands", href: "brands.html" },
-      ],
+      href: "frames.html",
+      match: ["frames.html", "brands.html"],
     },
     {
       label: "Eye Care",
-      href: "#",
+      href: "lens-solutions.html",
       match: ["vision-care.html", "lens-solutions.html", "face-shape-guide.html"],
       children: [
         { label: "Lens Solutions", href: "lens-solutions.html" },
         { label: "Face Shape Guide", href: "face-shape-guide.html" },
-        { label: "Vision Care", href: "vision-care.html" },
+        { label: "Vision Care Tips", href: "vision-care.html" },
       ],
     },
     { label: "Virtual Try-On", href: "virtual-try-on.html", match: ["virtual-try-on.html"] },

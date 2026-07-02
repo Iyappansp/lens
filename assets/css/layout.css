@@ -42,7 +42,7 @@
 }
 
 .main-nav{ display:flex; align-items:center; gap: var(--space-5); }
-.main-nav ul{ display:flex; align-items:center; gap: 1.85rem; }
+.main-nav > ul{ display:flex; align-items:center; gap: 1.85rem; }
 .main-nav a{
   font-family: var(--font-heading);
   font-weight:500;
@@ -70,21 +70,33 @@
 .nav-dropdown > a svg{ width:14px; height:14px; transition: transform var(--transition-fast); }
 .nav-dropdown:hover > a svg{ transform: rotate(180deg); }
 .dropdown-menu{
-  position:absolute; top: calc(100% + 14px); left:50%;
+  position:absolute; top: calc(100% + 24px); left:50%;
   transform: translateX(-50%) translateY(6px);
-  min-width:220px;
+  min-width:250px;
   background: var(--surface-raised);
   border:1px solid var(--border-color);
   border-radius: var(--radius-md);
   box-shadow: 0 20px 40px -10px var(--shadow-color-strong);
-  padding: .6rem;
+  padding: 1.2rem 1.4rem;
   opacity:0; visibility:hidden;
   transition: opacity var(--transition-base), transform var(--transition-base), visibility var(--transition-base);
   z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -28px;
+  left: 0;
+  right: 0;
+  height: 28px;
+  background: transparent;
 }
 .nav-dropdown:hover .dropdown-menu{ opacity:1; visibility:visible; transform: translateX(-50%) translateY(0); }
 .dropdown-menu li a{
-  display:block; padding:.6rem .8rem; border-radius: var(--radius-sm); font-size:.88rem;
+  display:block; padding:.6rem 1.4rem; border-radius: var(--radius-sm); font-size:.88rem;
 }
 .dropdown-menu li a::after{ display:none; }
 .dropdown-menu li a:hover{ background: var(--surface-secondary-tint); color: var(--color-primary); }
@@ -166,7 +178,7 @@ body.menu-open{ overflow:hidden; }
 .menu-backdrop.open{ opacity:1; visibility:visible; }
 
 @media (max-width:1023px){
-  .main-nav ul:not(.mobile-nav ul){ display:none; }
+  .main-nav > ul{ display:none; }
   .header-cta-group .btn:not(.btn-icon){ display:none; }
   .mobile-menu-btn{ display:flex; }
 }

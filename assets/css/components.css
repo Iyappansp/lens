@@ -68,23 +68,37 @@
 
 /* ---------- HERO HOME-2 (Split Showroom) ---------- */
 .hero-2{
-  background: var(--color-primary);
-  color:#fff;
+  background: linear-gradient(135deg, var(--surface-secondary-tint) 0%, var(--surface-alt) 100%);
+  color: var(--text-primary);
   overflow:hidden;
   position:relative;
+  border-bottom: 1px solid var(--border-color);
 }
 .hero-2::after{
   content:''; position:absolute; inset:0;
-  background: radial-gradient(circle at 90% 20%, rgba(255,255,255,.08), transparent 50%);
+  background: radial-gradient(circle at 90% 20%, rgba(var(--color-primary-rgb),.04), transparent 55%);
 }
-.hero-2 .eyebrow{ color: var(--color-secondary); }
-.hero-2 .eyebrow::before{ background: var(--color-secondary); }
-.hero-2 h1{ color:#fff; }
-.hero-2 p.lead{ color: rgba(255,255,255,.78); }
-.hero-2 .hero-visual img{ border-radius: var(--radius-lg); }
-.hero-2 .hero-trust .trust-text{ color: rgba(255,255,255,.7); }
-.hero-2 .hero-trust .trust-text strong{ color:#fff; }
+.hero-2 .eyebrow{ color: var(--color-accent); }
+.hero-2 .eyebrow::before{ background: var(--color-accent); }
+.hero-2 h1{ color: var(--text-primary); }
+.hero-2 p.lead{ color: var(--text-secondary); }
+.hero-2 .hero-visual img{ border-radius: var(--radius-lg); box-shadow: 0 20px 40px -15px var(--shadow-color-strong); }
+.hero-2 .hero-trust .trust-text{ color: var(--text-muted); }
+.hero-2 .hero-trust .trust-text strong{ color: var(--text-primary); }
 .hero-2 .hero-floating-card{ background: var(--surface-raised); color: var(--text-primary); }
+
+[data-theme="dark"] .hero-2{
+  background: linear-gradient(135deg, #0F172A 0%, #020617 100%);
+  color: #fff;
+  border-bottom: 1px solid var(--border-color);
+}
+[data-theme="dark"] .hero-2::after{
+  background: radial-gradient(circle at 90% 20%, rgba(255,255,255,.05), transparent 55%);
+}
+[data-theme="dark"] .hero-2 h1{ color: #fff; }
+[data-theme="dark"] .hero-2 p.lead{ color: rgba(255,255,255,.78); }
+[data-theme="dark"] .hero-2 .hero-trust .trust-text{ color: rgba(255,255,255,.7); }
+[data-theme="dark"] .hero-2 .hero-trust .trust-text strong{ color: #fff; }
 
 /* ---------- CATEGORY CARDS ---------- */
 .category-card{

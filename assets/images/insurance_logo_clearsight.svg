@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="100%" height="100%">
+  <rect width="200" height="80" rx="8" fill="#ffffff" />
+  <!-- Lens/Sparkle Icon -->
+  <g transform="translate(20, 22)">
+    <circle cx="20" cy="18" r="16" fill="none" stroke="#4a90e2" stroke-width="4" />
+    <circle cx="20" cy="18" r="8" fill="none" stroke="#00f0ff" stroke-width="3" />
+    <path d="M 28,10 Q 32,18 36,18 Q 32,18 32,24" fill="none" stroke="#ffeb3b" stroke-width="2" stroke-linecap="round" />
+  </g>
+  <text x="70" y="42" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e3a5f">ClearSight Co.</text>
+  <text x="70" y="55" font-family="sans-serif" font-size="8" font-weight="bold" fill="#00d2ff" letter-spacing="1.5">VISION INSURE</text>
+</svg>

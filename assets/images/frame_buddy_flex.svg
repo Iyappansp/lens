@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF9C4" />
+      <stop offset="100%" stop-color="#E0F7FA" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#0288d1" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Colorful Kids Frame -->
+    <!-- Temples -->
+    <path d="M 90,150 L 65,120 M 310,150 L 335,120" stroke="#0288d1" stroke-width="10" stroke-linecap="round"/>
+    
+    <rect x="95" y="125" width="80" height="55" rx="18" fill="#ffffff" fill-opacity="0.2" stroke="#0288d1" stroke-width="12" />
+    <rect x="225" y="125" width="80" height="55" rx="18" fill="#ffffff" fill-opacity="0.2" stroke="#0288d1" stroke-width="12" />
+    
+    <path d="M 175,142 Q 200,135 225,142" fill="none" stroke="#0288d1" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Reflections -->
+    <path d="M 110,135 L 140,165 M 240,135 L 270,165" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.6" />
+    
+    <!-- Extra cute dot detailing -->
+    <circle cx="105" cy="135" r="3" fill="#ffffff" />
+    <circle cx="295" cy="135" r="3" fill="#ffffff" />
+  </g>
+</svg>

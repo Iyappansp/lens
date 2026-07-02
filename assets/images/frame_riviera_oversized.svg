@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2c3e50" />
+      <stop offset="100%" stop-color="#000000" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2C0F32" />
+      <stop offset="50%" stop-color="#5B1647" />
+      <stop offset="100%" stop-color="#D85A7E" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Temples -->
+    <path d="M 70,140 L 45,105 M 330,140 L 355,105" stroke="#111" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Oversized Square/Round Frame -->
+    <rect x="80" y="110" width="100" height="80" rx="24" fill="url(#lens)" stroke="#111" stroke-width="14" />
+    <rect x="220" y="110" width="100" height="80" rx="24" fill="url(#lens)" stroke="#111" stroke-width="14" />
+    
+    <path d="M 180,135 Q 200,126 220,135" fill="none" stroke="#111" stroke-width="14" stroke-linecap="round" />
+    
+    <!-- Premium Reflection -->
+    <path d="M 90,120 L 160,180 M 230,120 L 300,180" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.25" />
+    
+    <!-- Metal accent dots -->
+    <circle cx="92" cy="122" r="2.5" fill="#BF953F" />
+    <circle cx="308" cy="122" r="2.5" fill="#BF953F" />
+  </g>
+</svg>

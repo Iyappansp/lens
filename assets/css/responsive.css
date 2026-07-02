@@ -30,7 +30,14 @@ table.compare-table{ display:block; overflow-x:auto; white-space:nowrap; border-
   -ms-overflow-style:none; scrollbar-width:none;
 }
 .scroll-tabs::-webkit-scrollbar{ display:none; }
-.scroll-tabs .tab-btn{ flex-shrink:0; }
+.scroll-tabs .tab-btn, .scroll-tabs .face-tab-btn{ flex-shrink:0; }
+@media (max-width:767px){
+  .scroll-tabs{
+    justify-content: flex-start;
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+}
 
 /* ---------- TABLET (768px+) ---------- */
 @media (min-width:768px){

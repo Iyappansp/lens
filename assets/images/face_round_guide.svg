@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="100%" stop-color="#fdbb2d" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#4a90e2" stop-opacity="0.1" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="360" rx="16" fill="url(#bg)" />
+  
+  <g transform="translate(0, 10)">
+    <!-- Face Outline: Circular / Round Face -->
+    <ellipse cx="200" cy="180" rx="90" ry="92" fill="url(#skin)" opacity="0.9" />
+    
+    <!-- Neck -->
+    <path d="M 180,265 L 180,310 L 220,310 L 220,265 Z" fill="#e28743" opacity="0.8"/>
+    
+    <!-- Hair -->
+    <path d="M 110,140 Q 200,60 290,140 Q 250,110 200,110 Q 150,110 110,140 Z" fill="#1e1b4b" />
+    <path d="M 107,160 Q 100,100 200,80 Q 300,100 293,160 Q 260,100 200,100 Q 140,100 107,160 Z" fill="#111827" />
+
+    <!-- Eyes (simple closed or neutral) -->
+    <ellipse cx="165" cy="175" rx="10" ry="6" fill="#1e1b4b" opacity="0.3" />
+    <ellipse cx="235" cy="175" rx="10" ry="6" fill="#1e1b4b" opacity="0.3" />
+    <circle cx="165" cy="175" r="3" fill="#111827" />
+    <circle cx="235" cy="175" r="3" fill="#111827" />
+
+    <!-- Recommended: Angular / Rectangle Frame -->
+    <g transform="translate(0, 15)">
+      <!-- Temples -->
+      <path d="M 100,152 L 120,150 M 300,152 L 280,150" stroke="#000" stroke-width="6" />
+      <!-- Left Rim -->
+      <rect x="115" y="130" width="70" height="42" rx="4" fill="url(#lens)" stroke="#000000" stroke-width="8" />
+      <!-- Right Rim -->
+      <rect x="215" y="130" width="70" height="42" rx="4" fill="url(#lens)" stroke="#000000" stroke-width="8" />
+      <!-- Bridge -->
+      <path d="M 185,145 L 215,145" stroke="#000000" stroke-width="8" />
+      <!-- Glare -->
+      <path d="M 120,135 L 145,165 M 220,135 L 245,165" stroke="#fff" stroke-width="2" stroke-linecap="round" opacity="0.5" />
+    </g>
+    
+    <!-- Smile -->
+    <path d="M 185,225 Q 200,238 215,225" fill="none" stroke="#7c2d12" stroke-width="4" stroke-linecap="round" />
+  </g>
+</svg>

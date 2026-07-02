@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111" />
+      <stop offset="100%" stop-color="#2d3748" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff007f" />
+      <stop offset="50%" stop-color="#ffaa00" />
+      <stop offset="100%" stop-color="#00f0ff" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Aerodynamic Sport Temples -->
+    <path d="M 70,135 Q 50,118 45,108 M 330,135 Q 350,118 355,108" fill="none" stroke="#1a202c" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Wraparound Sport Shield Lens -->
+    <path d="M 75,130 C 130,115 270,115 325,130 C 335,133 325,180 290,185 C 230,192 170,192 110,185 C 75,180 65,133 75,130 Z" fill="url(#lens)" stroke="#1a202c" stroke-width="8" stroke-linejoin="round" />
+    
+    <!-- Sport venting holes/details -->
+    <path d="M 120,138 L 130,138" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 270,138 L 280,138" stroke="#111" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- High speed mirrored reflection line -->
+    <path d="M 90,135 Q 200,122 310,135" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round" opacity="0.4" />
+  </g>
+</svg>

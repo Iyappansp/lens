@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141E30" />
+      <stop offset="100%" stop-color="#243B55" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.1" />
+      <stop offset="30%" stop-color="#4a90e2" stop-opacity="0.2" />
+      <stop offset="70%" stop-color="#ffffff" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#4a90e2" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Temples (Sides) -->
+    <path d="M 80,145 L 60,110 M 320,145 L 340,110" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Left Lens and Frame -->
+    <rect x="90" y="120" width="90" height="60" rx="10" fill="url(#lens)" stroke="#0f172a" stroke-width="12" />
+    <!-- Right Lens and Frame -->
+    <rect x="220" y="120" width="90" height="60" rx="10" fill="url(#lens)" stroke="#0f172a" stroke-width="12" />
+    
+    <!-- Bridge -->
+    <path d="M 180,135 Q 200,125 220,135" fill="none" stroke="#0f172a" stroke-width="12" stroke-linecap="round" />
+    
+    <!-- Lens Reflection -->
+    <path d="M 95,125 L 140,175 M 225,125 L 270,175" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.3" />
+    
+    <!-- Highlights -->
+    <rect x="93" y="123" width="84" height="54" rx="8" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+    <rect x="223" y="123" width="84" height="54" rx="8" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15" />
+  </g>
+</svg>

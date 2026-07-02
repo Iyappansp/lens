@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="box-side" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d6ecf3" />
+      <stop offset="100%" stop-color="#b8dce8" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" rx="16" fill="url(#bg)" />
+  
+  <!-- Premium Cardboard Box -->
+  <g transform="translate(130, 80)">
+    <!-- Box Bottom Side Left -->
+    <polygon points="120,120 40,160 40,240 120,200" fill="url(#box-side)" />
+    <!-- Box Bottom Side Right -->
+    <polygon points="120,120 200,160 200,240 120,200" fill="#a4ccd8" />
+    <!-- Box Inner Tissue Paper (glowing teal/blue) -->
+    <polygon points="120,120 45,157 120,195 195,157" fill="#4a90e2" opacity="0.8" />
+    <polygon points="120,120 80,100 120,195 160,100" fill="#4a90e2" opacity="0.6" />
+    
+    <!-- Glasses Case emerging -->
+    <rect x="90" y="110" width="60" height="45" rx="10" fill="#1e3a5f" stroke="#ffffff" stroke-width="2" transform="rotate(-15, 120, 130)"/>
+    <path d="M 85,115 Q 120,105 145,125" fill="none" stroke="#4a90e2" stroke-width="3" />
+
+    <!-- Lid Left -->
+    <polygon points="40,160 -10,120 -10,110 40,150" fill="#9ec5d3" />
+    <!-- Lid Right -->
+    <polygon points="200,160 250,120 250,110 200,150" fill="#9ec5d3" />
+  </g>
+  
+  <text x="250" y="340" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#d6ecf3">BUY WITH CONFIDENCE</text>
+  <text x="250" y="365" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#7c8798">Fewer Returns · Guaranteed Fit</text>
+</svg>

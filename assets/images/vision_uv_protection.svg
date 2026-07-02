@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF9800" />
+      <stop offset="100%" stop-color="#FF5722" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#3e2723" />
+      <stop offset="100%" stop-color="#1a0c00" />
+    </linearGradient>
+  </defs>
+  <rect width="500" height="400" rx="16" fill="url(#bg)" />
+  
+  <!-- Glowing Golden Sun -->
+  <circle cx="400" cy="100" r="70" fill="#ffeb3b" opacity="0.9" />
+  <circle cx="400" cy="100" r="95" fill="#ffeb3b" opacity="0.3" />
+  <circle cx="400" cy="100" r="125" fill="#ffeb3b" opacity="0.1" />
+
+  <!-- Tropical Leaf Shadow Overlay -->
+  <path d="M 0,0 Q 120,80 180,240 Q 60,180 0,0 Z" fill="#e65100" opacity="0.4" />
+  <path d="M 0,100 Q 150,150 200,350 Q 80,280 0,100 Z" fill="#e65100" opacity="0.4" />
+
+  <!-- Aviator Sunglasses in Center -->
+  <g transform="translate(100, 120)">
+    <!-- Golden frame -->
+    <!-- Left rim -->
+    <path d="M 45,60 C 85,50 125,60 120,95 C 115,120 70,130 50,105 C 40,90 40,70 45,60 Z" fill="url(#lens)" stroke="#ffffff" stroke-width="5" />
+    <!-- Right rim -->
+    <path d="M 255,60 C 215,50 175,60 180,95 C 185,120 230,130 250,105 C 260,90 260,70 255,60 Z" fill="url(#lens)" stroke="#ffffff" stroke-width="5" />
+    
+    <!-- Bridge and top bar -->
+    <path d="M 105,60 L 195,60" stroke="#ffffff" stroke-width="4.5" />
+    <path d="M 115,72 Q 150,66 185,72" fill="none" stroke="#ffffff" stroke-width="4.5" />
+    
+    <!-- Bold white lens reflections -->
+    <path d="M 55,68 Q 80,105 110,115" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.4" />
+    <path d="M 190,68 Q 215,105 245,115" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.4" />
+  </g>
+  
+  <text x="250" y="340" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#ffffff">100% UV PROTECTION</text>
+  <text x="250" y="365" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#ffcc80">Blocks UVA &amp; UVB · Polarized Contrast</text>
+</svg>

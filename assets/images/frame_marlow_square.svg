@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3E2723" />
+      <stop offset="100%" stop-color="#1A0C00" />
+    </linearGradient>
+    <pattern id="tortoise" width="40" height="40" patternUnits="userSpaceOnUse">
+      <rect width="40" height="40" fill="#E65100" />
+      <circle cx="10" cy="10" r="8" fill="#3E2723" opacity="0.9" />
+      <circle cx="30" cy="25" r="12" fill="#211007" opacity="0.95" />
+      <circle cx="5" cy="35" r="6" fill="#FFB74D" opacity="0.5" />
+      <circle cx="25" cy="5" r="7" fill="#E65100" />
+    </pattern>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15" />
+      <stop offset="100%" stop-color="#b2dfdb" stop-opacity="0.05" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Temples -->
+    <path d="M 80,145 L 60,110 M 320,145 L 340,110" stroke="#211007" stroke-width="9" stroke-linecap="round"/>
+    
+    <!-- Square Frame with Tortoise Pattern -->
+    <rect x="90" y="115" width="85" height="65" rx="12" fill="url(#lens)" stroke="url(#tortoise)" stroke-width="13" />
+    <rect x="225" y="115" width="85" height="65" rx="12" fill="url(#lens)" stroke="url(#tortoise)" stroke-width="13" />
+    
+    <path d="M 175,135 Q 200,126 225,135" fill="none" stroke="url(#tortoise)" stroke-width="13" stroke-linecap="round" />
+    
+    <!-- Reflection -->
+    <path d="M 100,125 L 145,170 M 235,125 L 280,170" fill="none" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.3" />
+  </g>
+</svg>

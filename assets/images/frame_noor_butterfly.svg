@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3E2723" />
+      <stop offset="100%" stop-color="#4E342E" />
+    </linearGradient>
+    <pattern id="tortoise" width="50" height="50" patternUnits="userSpaceOnUse">
+      <rect width="50" height="50" fill="#E65100" />
+      <circle cx="15" cy="15" r="10" fill="#2D1500" />
+      <circle cx="35" cy="35" r="14" fill="#1C0A00" />
+      <circle cx="10" cy="40" r="5" fill="#FFA726" opacity="0.4" />
+    </pattern>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#ffcc80" stop-opacity="0.05" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Temples -->
+    <path d="M 75,140 L 50,110 M 325,140 L 350,110" stroke="#1d0d04" stroke-width="8" stroke-linecap="round"/>
+    
+    <!-- Butterfly rims -->
+    <!-- Left Rim -->
+    <path d="M 80,122 C 105,108 175,122 170,158 C 168,188 115,192 90,168 C 76,154 75,132 80,122 Z" fill="url(#lens)" stroke="url(#tortoise)" stroke-width="12" stroke-linejoin="round" />
+    <!-- Right Rim -->
+    <path d="M 320,122 C 295,108 225,122 230,158 C 232,188 285,192 310,168 C 324,154 325,132 320,122 Z" fill="url(#lens)" stroke="url(#tortoise)" stroke-width="12" stroke-linejoin="round" />
+    
+    <path d="M 165,140 Q 200,128 235,140" fill="none" stroke="url(#tortoise)" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Lens reflection -->
+    <path d="M 90,128 L 135,178 M 235,128 L 280,178" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.35" />
+  </g>
+</svg>

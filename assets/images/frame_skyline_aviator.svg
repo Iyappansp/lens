@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF7E5F" />
+      <stop offset="100%" stop-color="#FEB47B" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A2A6C" />
+      <stop offset="50%" stop-color="#B21F1F" />
+      <stop offset="100%" stop-color="#FDBB2D" />
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BF953F" />
+      <stop offset="25%" stop-color="#FCF6BA" />
+      <stop offset="50%" stop-color="#B38728" />
+      <stop offset="75%" stop-color="#FBF5B7" />
+      <stop offset="100%" stop-color="#AA771C" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="8" flood-color="#000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+  <rect width="400" height="300" rx="14" fill="url(#bg)" />
+  <g filter="url(#shadow)" transform="translate(0, 10)">
+    <!-- Temples -->
+    <path d="M 90,145 L 50,110 M 310,145 L 350,110" stroke="url(#gold)" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Aviator Tear Drop Lenses -->
+    <path d="M 95,130 C 135,120 175,130 170,165 C 165,190 120,200 100,175 C 90,160 90,140 95,130 Z" fill="url(#lens)" stroke="url(#gold)" stroke-width="4.5" />
+    <path d="M 305,130 C 265,120 225,130 230,165 C 235,190 280,200 300,175 C 310,160 310,140 305,130 Z" fill="url(#lens)" stroke="url(#gold)" stroke-width="4.5" />
+    
+    <!-- Top bar and Bridge -->
+    <path d="M 155,130 L 245,130" stroke="url(#gold)" stroke-width="3.5" />
+    <path d="M 165,142 Q 200,136 235,142" fill="none" stroke="url(#gold)" stroke-width="3.5" />
+    
+    <!-- Diagonal Polarized Reflection -->
+    <path d="M 105,138 Q 130,175 160,185" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.4" />
+    <path d="M 240,138 Q 265,175 295,185" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" opacity="0.4" />
+  </g>
+</svg>

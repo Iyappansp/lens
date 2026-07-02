@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 360" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+    <linearGradient id="skin" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fed7aa" />
+      <stop offset="100%" stop-color="#f59e0b" />
+    </linearGradient>
+    <linearGradient id="lens" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0.1" />
+    </linearGradient>
+    <linearGradient id="frame-color" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+  <rect width="400" height="360" rx="16" fill="url(#bg)" />
+  
+  <g transform="translate(0, 10)">
+    <!-- Face Outline: Narrow Forehead, Wide Cheekbones, Pointed Chin -->
+    <path d="M 200,85 C 230,85 270,130 282,180 C 270,225 230,265 200,270 C 170,265 130,225 118,180 C 130,130 170,85 200,85 Z" fill="url(#skin)" opacity="0.9" />
+    
+    <!-- Neck -->
+    <path d="M 188,266 L 188,315 L 212,315 L 212,266 Z" fill="#d97706" opacity="0.8"/>
+    
+    <!-- Hair -->
+    <path d="M 125,120 Q 200,30 275,120 Q 200,85 125,120 Z" fill="#2d1500" />
+    <path d="M 125,120 C 110,140 115,190 120,200 C 125,160 135,140 135,140 Z" fill="#2d1500" />
+    <path d="M 275,120 C 290,140 285,190 280,200 C 275,160 265,140 265,140 Z" fill="#2d1500" />
+
+    <!-- Eyes -->
+    <ellipse cx="170" cy="172" rx="8" ry="4.5" fill="#2d1500" />
+    <ellipse cx="230" cy="172" rx="8" ry="4.5" fill="#2d1500" />
+
+    <!-- Recommended: Oval / Cat-Eye Frame to balance cheekbones -->
+    <g transform="translate(0, 10)">
+      <!-- Temples -->
+      <path d="M 115,152 L 130,150 M 285,152 L 270,150" stroke="url(#frame-color)" stroke-width="4.5" />
+      <!-- Left Oval Rim -->
+      <ellipse cx="155" cy="150" rx="27" ry="20" fill="url(#lens)" stroke="url(#frame-color)" stroke-width="5" />
+      <!-- Right Oval Rim -->
+      <ellipse cx="245" cy="150" rx="27" ry="20" fill="url(#lens)" stroke="url(#frame-color)" stroke-width="5" />
+      <!-- Bridge -->
+      <path d="M 182,150 Q 200,142 218,150" fill="none" stroke="url(#frame-color)" stroke-width="5" />
+      <!-- Glare -->
+      <path d="M 138,142 Q 155,162 165,145" fill="none" stroke="#fff" stroke-width="2" opacity="0.5" stroke-linecap="round" />
+    </g>
+    
+    <!-- Smile -->
+    <path d="M 188,230 Q 200,238 212,230" fill="none" stroke="#7c2d12" stroke-width="4.5" stroke-linecap="round" />
+  </g>
+</svg>

@@ -144,7 +144,7 @@
       group.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
       tabBtn.classList.add("active");
 
-      group.querySelectorAll(".lens-panel, .generic-panel").forEach((panel) => {
+      document.querySelectorAll(".lens-panel, .generic-panel").forEach((panel) => {
         panel.classList.toggle("active", panel.id === targetId);
       });
     });
@@ -161,7 +161,7 @@
       group.querySelectorAll(".face-tab-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      group.querySelectorAll(".face-shape-panel").forEach((panel) => {
+      document.querySelectorAll(".face-shape-panel").forEach((panel) => {
         panel.classList.toggle("active", panel.id === targetId);
       });
     });

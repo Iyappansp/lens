@@ -22,7 +22,9 @@
 
 .footer-top{ text-align: start; }
 
-table.compare-table{ display:block; overflow-x:auto; white-space:nowrap; border-radius: var(--radius-md); }
+@media (max-width: 767px) {
+  table.compare-table{ display:block; overflow-x:auto; white-space:nowrap; border-radius: var(--radius-md); }
+}
 
 /* Tabs that need horizontal scroll on mobile instead of wrap */
 .scroll-tabs{

@@ -28,7 +28,6 @@
       href: "lens-solutions.html",
       match: ["vision-care.html", "lens-solutions.html", "face-shape-guide.html"],
       children: [
-        { label: "Lens Solutions", href: "lens-solutions.html" },
         { label: "Face Shape Guide", href: "face-shape-guide.html" },
         { label: "Vision Care Tips", href: "vision-care.html" },
       ],
@@ -130,11 +129,11 @@
         </nav>
 
         <div class="header-actions">
-          <button class="icon-toggle" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle theme">
+          <button class="icon-toggle theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle dark mode" title="Toggle theme">
             ${ICONS.sun}${ICONS.moon}
           </button>
-          <button class="icon-toggle lang-toggle" id="rtlToggleBtn" aria-label="Toggle language direction" title="Toggle RTL/LTR">
-            <span id="rtlToggleLabel">EN</span>
+          <button class="icon-toggle lang-toggle rtl-toggle-btn" id="rtlToggleBtn" aria-label="Toggle language direction" title="Toggle RTL/LTR">
+            <span id="rtlToggleLabel" class="rtl-toggle-label">RTL</span>
           </button>
           <div class="header-cta-group">
             <a href="login.html" class="btn btn-primary btn-sm">Login</a>
@@ -151,6 +150,14 @@
       <ul>${mobileLinks}</ul>
       <div class="mobile-cta">
         <a href="login.html" class="btn btn-primary btn-block">Login</a>
+        <div class="mobile-nav-toggle-row" style="display:flex; justify-content:center; gap:1.2rem; margin-top:1.8rem; border-top:1px solid var(--border-color); padding-top:1.5rem;">
+          <button class="icon-toggle theme-toggle-btn" aria-label="Toggle dark mode" title="Toggle theme">
+            ${ICONS.sun}${ICONS.moon}
+          </button>
+          <button class="icon-toggle lang-toggle rtl-toggle-btn" aria-label="Toggle language direction" title="Toggle RTL/LTR">
+            <span class="rtl-toggle-label">RTL</span>
+          </button>
+        </div>
       </div>
     </nav>
     `;
@@ -200,7 +207,6 @@
         <div class="footer-col">
           <h5>Eye Care</h5>
           <ul>
-            <li><a href="lens-solutions.html">Lens Solutions</a></li>
             <li><a href="face-shape-guide.html">Face Shape Guide</a></li>
             <li><a href="eye-test-booking.html">Book Eye Test</a></li>
             <li><a href="vision-care.html">Vision Care Tips</a></li>
@@ -263,7 +269,7 @@
     document.documentElement.setAttribute("data-theme", theme);
 
     document.addEventListener("click", (e) => {
-      const btn = e.target.closest("#themeToggleBtn");
+      const btn = e.target.closest("#themeToggleBtn, .theme-toggle-btn");
       if (!btn) return;
       const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
@@ -279,7 +285,7 @@
     applyDir(stored);
 
     document.addEventListener("click", (e) => {
-      const btn = e.target.closest("#rtlToggleBtn");
+      const btn = e.target.closest("#rtlToggleBtn, .rtl-toggle-btn");
       if (!btn) return;
       const next = document.documentElement.getAttribute("dir") === "rtl" ? "ltr" : "rtl";
       applyDir(next);
@@ -289,8 +295,10 @@
     function applyDir(dir) {
       document.documentElement.setAttribute("dir", dir);
       document.documentElement.setAttribute("lang", dir === "rtl" ? "ar" : "en");
-      const label = document.getElementById("rtlToggleLabel");
-      if (label) label.textContent = dir === "rtl" ? "AR" : "EN";
+      const labels = document.querySelectorAll("#rtlToggleLabel, .rtl-toggle-label");
+      labels.forEach((label) => {
+        label.textContent = dir === "rtl" ? "LTR" : "RTL";
+      });
     }
   }
 
@@ -323,6 +331,7 @@
 
       if (submenuToggle) {
         e.preventDefault();
+        submenuToggle.classList.toggle("open");
         const submenu = submenuToggle.nextElementSibling;
         submenu.classList.toggle("open");
       }

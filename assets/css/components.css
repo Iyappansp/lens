@@ -151,12 +151,13 @@
   padding: 1rem 1.3rem;
   min-width:108px;
   transition: all var(--transition-fast);
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
-.face-tab-btn .shape-icon{ width:34px; height:34px; }
-.face-tab-btn span{ font-family: var(--font-heading); font-size:.85rem; font-weight:600; }
+.face-tab-btn .shape-icon{ width:34px; height:34px; stroke: var(--text-primary); }
+.face-tab-btn span{ font-family: var(--font-heading); font-size:.85rem; font-weight:600; color: var(--text-primary); }
 .face-tab-btn:hover{ border-color: var(--color-accent); }
 .face-tab-btn.active{ background: var(--color-primary); border-color: var(--color-primary); color:#fff; }
+.face-tab-btn.active .shape-icon{ stroke:#fff; }
 .face-tab-btn.active span{ color:#fff; }
 
 .face-shape-panel{ display:none; }
@@ -334,24 +335,36 @@
 
 .offer-card{
   background: var(--surface-raised); border:1px solid var(--border-color); border-radius: var(--radius-lg);
-  overflow:hidden; height:100%;
+  overflow:hidden; height:100%; position:relative;
 }
-.offer-card .offer-badge-row{ display:flex; justify-content:space-between; align-items:flex-start; padding: var(--space-4) var(--space-4) 0; }
+.offer-card .offer-badge-row{
+  position: absolute;
+  top: var(--space-3);
+  left: var(--space-3);
+  right: var(--space-3);
+  z-index: 5;
+  display:flex; justify-content:space-between; align-items:center;
+}
+.offer-card .offer-badge-row .badge {
+  box-shadow: 0 6px 16px rgba(17,24,39,0.18);
+  background: var(--surface-raised);
+}
 .offer-card .offer-media{ aspect-ratio: 16/9; overflow:hidden; }
 .offer-card .offer-media img{ width:100%; height:100%; object-fit:cover; }
 .offer-card .offer-body{ padding: var(--space-4); }
 .offer-card .offer-discount{
   font-family: var(--font-heading); font-weight:700; font-size:.82rem;
   padding: .3rem .8rem; border-radius: var(--radius-pill);
-  background: rgba(74, 144, 226, .14);
+  background: var(--surface-raised);
   color: var(--color-accent);
   letter-spacing:.02em;
   display:inline-flex; align-items:center;
   text-transform: uppercase;
+  box-shadow: 0 6px 16px rgba(17,24,39,0.18);
 }
 [data-theme="dark"] .offer-card .offer-discount{
-  background: rgba(74, 144, 226, .25);
-  color: #fff;
+  background: var(--surface-raised);
+  color: var(--color-accent);
 }
 
 /* ---------- INSURANCE / COMPARE TABLE ---------- */

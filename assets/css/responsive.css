@@ -123,9 +123,32 @@
 }
 
 @media (max-width: 480px) {
-  .grid-3 > *, .grid-5 > * {
-    flex: 0 0 calc(50% - var(--space-3) / 2) !important;
-    max-width: calc(50% - var(--space-3) / 2) !important;
+  .grid-2 > *, .grid-3 > *, .grid-4 > *, .grid-5 > *, .grid-6 > * {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .face-shape-tabs {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    overflow-x: auto !important;
+    padding-bottom: 0.5rem !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+  .face-shape-tabs::-webkit-scrollbar {
+    display: none !important;
+  }
+  .face-shape-tabs .face-tab-btn {
+    flex: 0 0 auto !important;
+    max-width: none !important;
+    min-width: 108px !important;
+    padding: 1rem 1.3rem !important;
+  }
+  
+  .try-on-stage {
+    padding: var(--space-4) !important;
   }
 }
 

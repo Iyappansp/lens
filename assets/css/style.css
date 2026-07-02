@@ -96,7 +96,7 @@
 
 /* ---------- RESET ---------- */
 *,*::before,*::after{ box-sizing: border-box; }
-html{ scroll-behavior: smooth; }
+html{ scroll-behavior: smooth; overflow-x: hidden; }
 body{
   margin:0;
   font-family: var(--font-body);
@@ -373,7 +373,7 @@ section{ padding: var(--space-7) 0; position:relative; }
   .grid-2,.grid-3,.grid-4,.grid-5,.grid-6{ grid-template-columns: repeat(2,1fr); gap: var(--space-3); }
 }
 @media (max-width:480px){
-  .grid-3,.grid-4,.grid-5,.grid-6{ grid-template-columns: 1fr 1fr; }
+  .grid-2,.grid-3,.grid-4,.grid-5,.grid-6{ grid-template-columns: 1fr; }
 }
 
 /* ---------- PAGE HERO (sub pages) ---------- */

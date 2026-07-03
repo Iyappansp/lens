@@ -174,7 +174,7 @@
         <div class="footer-brand">
           <a href="index.html" class="brand">
             <span class="brand-mark">${ICONS.glasses}</span>
-            <span>Optique &amp; Co.</span>
+            <span>Optique<em> & Co.</em><br><small>Eyewear &amp; Eye Care</small></span>
           </a>
           <p>Premium eyewear and professional eye care, blending modern vision technology with timeless style since day one.</p>
           <div class="footer-social">

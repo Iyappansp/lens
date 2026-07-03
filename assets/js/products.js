@@ -10,6 +10,15 @@
     if (!filterBar) return;
     const items = document.querySelectorAll("[data-filter-item]");
 
+    function applyFilters(filter) {
+      const filters = filter.toLowerCase().split(",");
+      items.forEach((item) => {
+        const cats = (item.getAttribute("data-filter-item") || "").toLowerCase().split(",");
+        const show = filters.includes("all") || cats.some(c => filters.includes(c));
+        item.style.display = show ? "" : "none";
+      });
+    }
+
     filterBar.addEventListener("click", (e) => {
       const btn = e.target.closest(".tab-btn[data-filter]");
       if (!btn) return;
@@ -18,12 +27,19 @@
       filterBar.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
 
-      items.forEach((item) => {
-        const cats = (item.getAttribute("data-filter-item") || "").split(",");
-        const show = filter === "all" || cats.includes(filter);
-        item.style.display = show ? "" : "none";
-      });
+      applyFilters(filter);
     });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const filterParam = urlParams.get("filter");
+    if (filterParam) {
+      filterBar.querySelectorAll(".tab-btn").forEach((b) => b.classList.remove("active"));
+      const matchingTab = filterBar.querySelector(`.tab-btn[data-filter="${filterParam.toLowerCase()}"]`);
+      if (matchingTab) {
+        matchingTab.classList.add("active");
+      }
+      applyFilters(filterParam);
+    }
   }
 
   /* ---------------- VIRTUAL TRY-ON (frontend preview only) ---------------- */

@@ -37,8 +37,20 @@
   color:#fff;
 }
 .brand .brand-mark svg{ width:22px; height:22px; }
+.brand span{
+  display: inline-block;
+  line-height: 1.15;
+  vertical-align: middle;
+}
 .brand span em{
   font-style:normal; color: var(--color-accent);
+}
+.brand span small{
+  display: block;
+  margin-top: 5px;
+  font-size: 0.68rem;
+  font-weight: 400;
+  color: var(--text-muted);
 }
 
 .main-nav{ display:flex; align-items:center; gap: var(--space-5); }
@@ -151,12 +163,13 @@
   background: var(--surface);
   z-index: 999;
   transform: translateX(-100%);
-  transition: transform var(--transition-base);
+  visibility: hidden;
+  transition: transform var(--transition-base), visibility var(--transition-base);
   overflow-y:auto;
   padding: var(--space-5) 1.25rem var(--space-7);
 }
 [dir="rtl"] .mobile-nav{ transform: translateX(100%); }
-.mobile-nav.open{ transform: translateX(0); }
+.mobile-nav.open{ transform: translateX(0); visibility: visible; }
 .mobile-nav ul{ display:flex; flex-direction:column; gap:.2rem; }
 .mobile-nav > ul > li > a{
   display:flex; align-items:center; justify-content:space-between;

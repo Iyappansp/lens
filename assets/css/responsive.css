@@ -5,7 +5,6 @@
 /* ---------- BASE / MOBILE (360px+) ---------- */
 .header-inner{ height: 70px; }
 .brand span{ font-size: 1.05rem; }
-.brand span small{ display:none; }
 .page-hero{ margin-top: 70px; padding: var(--space-6) 0 var(--space-5); }
 
 .hero-section{ padding-top: calc(70px + var(--space-6)); }
@@ -96,6 +95,7 @@
 }
 
 @media (max-width: 767px) {
+  .site-header .brand span small{ display:none; }
   .grid-3, .grid-5 {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -120,6 +120,14 @@
     min-width: 0 !important;
     padding: 0.8rem 0.5rem !important;
   }
+
+  .try-on-stage .flex {
+    flex-direction: column !important;
+    gap: var(--space-2) !important;
+  }
+  .try-on-stage .flex > .btn {
+    width: 100% !important;
+  }
 }
 
 @media (max-width: 480px) {
@@ -130,31 +138,57 @@
   
   .face-shape-tabs {
     display: flex !important;
-    flex-wrap: nowrap !important;
-    justify-content: flex-start !important;
-    overflow-x: auto !important;
-    padding-bottom: 0.5rem !important;
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-  }
-  .face-shape-tabs::-webkit-scrollbar {
-    display: none !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 0.4rem !important;
+    overflow-x: visible !important;
   }
   .face-shape-tabs .face-tab-btn {
-    flex: 0 0 auto !important;
+    flex: 0 0 calc(33.333% - 0.4rem * 2 / 3) !important;
+    min-width: 0 !important;
     max-width: none !important;
-    min-width: 108px !important;
-    padding: 1rem 1.3rem !important;
+    padding: 0.5rem 0.25rem !important;
+  }
+  .face-shape-tabs .face-tab-btn .shape-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .face-shape-tabs .face-tab-btn span {
+    font-size: 0.72rem !important;
   }
   
+  .before-after-toggle {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+  }
+  .before-after-toggle .tab-btn {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .container {
+    padding: 0 0.75rem !important;
+  }
   .try-on-stage {
-    padding: var(--space-4) !important;
+    padding: var(--space-3) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .try-on-stage {
+    padding: var(--space-2) !important;
   }
 }
 
 /* ---------- universal overflow guards ---------- */
-html, body{ max-width:100%; }
-.container, .grid, .card, img, table{ max-width:100%; }
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+}
+.container, .grid, .card, img, table {
+  max-width: 100%;
+}
 h1,h2,h3,h4,p,a,span{ overflow-wrap: break-word; word-break: break-word; }
 table{ width:100%; }
 

@@ -552,3 +552,45 @@ textarea.form-control{ resize: vertical; min-height: 130px; }
 @media (prefers-reduced-motion: reduce){
   *{ animation-duration:.001s !important; transition-duration:.001s !important; }
 }
+
+/* Card Icon Centering for Text-Centered Cards */
+.card.text-center .card-icon {
+  margin-inline: auto;
+}
+
+/* Testimonial Slider Dots Styles */
+.slider-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: var(--border-color);
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-base);
+}
+.slider-dot.active {
+  width: 24px;
+  border-radius: 4px;
+  background: var(--color-primary);
+}
+[data-theme="dark"] .slider-dot.active {
+  background: var(--color-accent);
+}
+
+/* Tighten About Page Section Padding to Avoid Empty Space */
+.about-page section {
+  padding: var(--space-5) 0;
+}
+@media (min-width: 768px) {
+  .about-page section {
+    padding: var(--space-6) 0;
+  }
+}
+

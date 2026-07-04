@@ -253,7 +253,7 @@ body.menu-open{ overflow:hidden; }
   border-bottom: 1px solid rgba(255,255,255,.1);
 }
 .footer-brand .brand{ color:#fff; margin-bottom: var(--space-3); }
-.footer-brand p{ font-size:.9rem; line-height:1.7; max-width:280px; color: rgba(255,255,255,.6); margin-bottom: var(--space-4); }
+.footer-brand p{ font-size:.9rem; line-height:1.7; max-width:280px; color: rgba(255,255,255,.6); margin-bottom: var(--space-4); text-align: left; }
 .footer-social{ display:flex; gap:.6rem; }
 .footer-social a{
   width:38px; height:38px; border-radius:50%;

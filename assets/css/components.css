@@ -171,6 +171,156 @@
 .face-shape-panel .panel-text p{ color: var(--text-secondary); line-height:1.7; margin-bottom: var(--space-4); }
 .face-shape-panel .recommend-list{ display:flex; flex-wrap:wrap; gap:.6rem; }
 
+/* AI Face Shape Scanner Simulation */
+.scanner-card {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  background: var(--surface-raised);
+  border: 1px solid var(--border-color);
+  aspect-ratio: 4 / 3;
+}
+.scanner-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scanner-face-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.65;
+  filter: grayscale(1);
+  transition: filter var(--transition-slow), opacity var(--transition-slow);
+}
+.scanner-card.scanning .scanner-face-img {
+  filter: grayscale(0.2) contrast(1.1) brightness(1.1);
+  opacity: 0.85;
+}
+.scanner-overlay-grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, rgba(74, 144, 226, 0.15) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(74, 144, 226, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity var(--transition-base);
+}
+.scanner-card.scanning .scanner-overlay-grid {
+  opacity: 0.9;
+}
+.scanner-reticle {
+  position: absolute;
+  width: 70%;
+  height: 75%;
+  border: 2px solid rgba(74, 144, 226, 0.4);
+  border-radius: 50% 50% 45% 45%;
+  pointer-events: none;
+  transition: border-color var(--transition-base), transform var(--transition-base);
+}
+.scanner-card.scanning .scanner-reticle {
+  border-color: var(--color-accent);
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(74, 144, 226, 0.4);
+}
+.scanner-bar {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+  box-shadow: 0 0 8px var(--color-accent);
+  top: 0;
+  pointer-events: none;
+  display: none;
+}
+.scanner-card.scanning .scanner-bar {
+  display: block;
+  animation: scan 2.5s infinite ease-in-out;
+}
+@keyframes scan {
+  0% { top: 10%; }
+  50% { top: 90%; }
+  100% { top: 10%; }
+}
+.scanner-status-box {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  right: var(--space-3);
+  background: rgba(17, 24, 39, 0.85);
+  color: #fff;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  font-family: monospace;
+  font-size: 0.85rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+[dir="rtl"] .scanner-status-box {
+  flex-direction: row-reverse;
+}
+.scanner-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ef4444;
+  margin-right: 8px;
+}
+[dir="rtl"] .scanner-status-dot {
+  margin-right: 0;
+  margin-left: 8px;
+}
+.scanner-card.scanning .scanner-status-dot {
+  background: #22c55e;
+  animation: blink 1s infinite alternate;
+}
+@keyframes blink {
+  from { opacity: 0.4; }
+  to { opacity: 1; }
+}
+
+/* Hairstyle Guide Cards */
+.hair-guide-card {
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-color);
+  height: 100%;
+}
+.hair-guide-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: rgba(var(--color-primary-rgb), 0.08);
+  color: var(--color-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+[data-theme="dark"] .hair-guide-icon {
+  background: var(--surface-secondary-tint);
+  color: var(--color-accent);
+}
+.hair-guide-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-2);
+}
+.hair-guide-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
 /* ---------- LENS TABS ---------- */
 .lens-tabs{ display:flex; gap:.6rem; flex-wrap:wrap; margin-bottom: var(--space-6); justify-content:center; }
 .tab-btn{
@@ -218,7 +368,7 @@
   background: var(--surface-raised);
   border:2px dashed var(--border-color);
   border-radius: var(--radius-md);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 3 / 4; /* Portrait aspect ratio to increase height */
   max-width: 500px;
   margin: 0 auto;
   display:flex; flex-direction:column; align-items:center; justify-content:center; gap: var(--space-3);
@@ -247,6 +397,10 @@
 .try-on-frame-list .frame-thumb.active{ border-color: var(--color-accent); }
 .before-after-toggle{ display:flex; gap:.5rem; margin-bottom: var(--space-4); max-width: 500px; margin-left: auto; margin-right: auto; justify-content: center; }
 .try-on-preview-side .flex{ max-width: 500px; margin-left: auto; margin-right: auto; width: 100%; }
+.try-on-preview-side .flex .btn {
+  padding-top: 1.1rem;
+  padding-bottom: 1.1rem;
+}
 @media (min-width: 1024px) {
   .before-after-toggle {
     margin-left: 0;
@@ -537,4 +691,131 @@
 .toast.show{ opacity:1; visibility:visible; transform: translateX(-50%) translateY(0); }
 [dir="rtl"] .toast.show{ transform: translateX(50%) translateY(0); }
 .toast svg{ width:18px; height:18px; color: var(--color-success); }
+
+
+/* Interactive Savings Calculator */
+.calc-card {
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 10px 30px var(--shadow-color);
+}
+.calc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+@media (min-width: 768px) {
+  .calc-grid {
+    grid-template-columns: 1.2fr .8fr;
+  }
+}
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.calc-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+.calc-group label {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.calc-select {
+  padding: 0.8rem 1rem;
+  border-radius: var(--radius-md);
+  border: 1.5px solid var(--border-color);
+  background: var(--surface);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+.calc-select:focus {
+  border-color: var(--color-accent);
+}
+.calc-results {
+  background: var(--surface-secondary-tint);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-3);
+  border: 1px solid var(--border-color);
+}
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+[dir="rtl"] .calc-row {
+  flex-direction: row-reverse;
+}
+.calc-row.total {
+  border-top: 1.5px dashed var(--border-color);
+  padding-top: var(--space-3);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+.calc-row.total .price-val {
+  color: var(--color-accent);
+}
+
+/* Referral Sharing Link box */
+.share-box {
+  display: flex;
+  gap: 8px;
+  background: var(--surface-raised);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 6px;
+  max-width: 480px;
+  margin-top: var(--space-3);
+  align-items: center;
+}
+[dir="rtl"] .share-box {
+  flex-direction: row-reverse;
+}
+.share-input {
+  border: none;
+  background: transparent;
+  padding: 8px;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  flex: 1;
+  outline: none;
+  font-family: monospace;
+}
+.share-btn {
+  background: var(--color-primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+.share-btn:hover {
+  background: var(--color-primary-light);
+}
+[data-theme="dark"] .share-btn {
+  background: var(--color-accent);
+}
+[data-theme="dark"] .share-btn:hover {
+  background: var(--color-primary-light);
+}
+
 

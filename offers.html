@@ -138,6 +138,160 @@
   </div>
 </section>
 
+<!-- ================= SAVINGS CALCULATOR ================= -->
+<section style="background: var(--surface-raised);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <span class="eyebrow" style="justify-content:center;">Interactive Tool</span>
+      <h2 class="section-title">Eyewear Savings Calculator</h2>
+      <p class="section-sub">Estimate your customized savings instantly! Choose your preferred frame and lens options, select an active promotion, and see your discount in real time.</p>
+    </div>
+    
+    <div class="calc-card reveal">
+      <div class="calc-grid">
+        <div class="calc-form">
+          <div class="calc-group">
+            <label for="frameTier">Frame Collection Tier</label>
+            <select id="frameTier" class="calc-select">
+              <option value="99">Everyday Essentials ($99)</option>
+              <option value="199" selected>Premium Collection ($199)</option>
+              <option value="299">Designer Boutique ($299)</option>
+            </select>
+          </div>
+          
+          <div class="calc-group">
+            <label for="lensType">Lens Prescription &amp; Upgrades</label>
+            <select id="lensType" class="calc-select">
+              <option value="0">Standard Single Vision ($0)</option>
+              <option value="120">Digital Progressive (+ $120)</option>
+              <option value="40">Blue Light Blocker (+ $40)</option>
+              <option value="60">Anti-Scratch &amp; Anti-Reflective (+ $60)</option>
+            </select>
+          </div>
+          
+          <div class="calc-group">
+            <label for="offerSelected">Select Active Promotion</label>
+            <select id="offerSelected" class="calc-select">
+              <option value="none">No Active Promo</option>
+              <option value="summer">Summer Sunglasses Sale (30% Off Frame)</option>
+              <option value="student">Student Discount (20% Off Total)</option>
+              <option value="welcome">Welcome Offer ($25 Off Total)</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="calc-results">
+          <div class="calc-row">
+            <span>Frame Price:</span>
+            <span id="resFrame">$199.00</span>
+          </div>
+          <div class="calc-row">
+            <span>Lens Upgrades:</span>
+            <span id="resLenses">$0.00</span>
+          </div>
+          <div class="calc-row">
+            <span>Subtotal:</span>
+            <span id="resSubtotal">$199.00</span>
+          </div>
+          <div class="calc-row">
+            <span>Discount Applied:</span>
+            <span id="resDiscount" style="color: var(--color-success); font-weight: 600;">-$0.00</span>
+          </div>
+          <div class="calc-row total">
+            <span>Estimated Total:</span>
+            <span class="price-val" id="resTotal">$199.00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script for calculator interactivity -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const frameTier = document.getElementById("frameTier");
+    const lensType = document.getElementById("lensType");
+    const offerSelected = document.getElementById("offerSelected");
+
+    const resFrame = document.getElementById("resFrame");
+    const resLenses = document.getElementById("resLenses");
+    const resSubtotal = document.getElementById("resSubtotal");
+    const resDiscount = document.getElementById("resDiscount");
+    const resTotal = document.getElementById("resTotal");
+
+    function calculate() {
+      const framePrice = parseFloat(frameTier.value) || 0;
+      const lensPrice = parseFloat(lensType.value) || 0;
+      const subtotal = framePrice + lensPrice;
+      let discount = 0;
+
+      const selectedPromo = offerSelected.value;
+      if (selectedPromo === "summer") {
+        discount = framePrice * 0.30;
+      } else if (selectedPromo === "student") {
+        discount = subtotal * 0.20;
+      } else if (selectedPromo === "welcome") {
+        discount = 25.00;
+      }
+
+      const total = Math.max(subtotal - discount, 0);
+
+      resFrame.textContent = `$${framePrice.toFixed(2)}`;
+      resLenses.textContent = `$${lensPrice.toFixed(2)}`;
+      resSubtotal.textContent = `$${subtotal.toFixed(2)}`;
+      resDiscount.textContent = `-$${discount.toFixed(2)}`;
+      resTotal.textContent = `$${total.toFixed(2)}`;
+    }
+
+    frameTier.addEventListener("change", calculate);
+    lensType.addEventListener("change", calculate);
+    offerSelected.addEventListener("change", calculate);
+  });
+</script>
+
+<!-- ================= REFERRAL PROGRAM ================= -->
+<section style="background: var(--surface-alt);">
+  <div class="container">
+    <div class="split-section">
+      <div class="reveal">
+        <span class="eyebrow">Refer A Friend</span>
+        <h2 class="section-title">Share the Sight: Refer &amp; Earn</h2>
+        <p class="section-sub" style="margin-bottom:var(--space-3);">Love your new look? Share it with friends and family. Send them your unique referral link: they get $30 off their first purchase, and you will receive a $30 credit toward your next pair. It is a win-win for clear sight and great style.</p>
+        <div class="share-box">
+          <input type="text" class="share-input" value="https://optique.co/ref?id=optique384" readonly id="referralLinkInput">
+          <button class="share-btn" id="copyReferralLinkBtn">Copy Link</button>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="card-media" style="aspect-ratio:5/4;"><img src="assets/images/offer_family.png" alt="Friends sharing and showing off their matching stylish frames"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script for copy referral link -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const copyBtn = document.getElementById("copyReferralLinkBtn");
+    const linkInput = document.getElementById("referralLinkInput");
+
+    copyBtn.addEventListener("click", () => {
+      linkInput.select();
+      linkInput.setSelectionRange(0, 99999); // For mobile devices
+      navigator.clipboard.writeText(linkInput.value).then(() => {
+        const originalText = copyBtn.textContent;
+        copyBtn.textContent = "Copied!";
+        copyBtn.style.background = "var(--color-success)";
+        setTimeout(() => {
+          copyBtn.textContent = originalText;
+          copyBtn.style.background = "";
+        }, 2000);
+      });
+    });
+  });
+</script>
+
 <section style="background:var(--surface);">
   <div class="container">
     <div class="cta-band reveal">

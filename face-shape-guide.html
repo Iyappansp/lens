@@ -34,6 +34,92 @@
 
 <section class="lg-py-extra">
   <div class="container">
+    <!-- ================= AI FACE SHAPE SCANNER SIMULATION ================= -->
+    <div class="split-section" style="margin-bottom: var(--space-6); align-items: center;">
+      <div class="reveal">
+        <span class="eyebrow">Instant Analysis</span>
+        <h2 class="section-title">AI Face Shape Scanner</h2>
+        <p class="section-sub" style="margin-bottom: var(--space-4);">Unsure of your face shape? Try our interactive AI camera simulation. Our system uses advanced boundary scanning to analyze your facial proportions (forehead, cheekbones, jawline) and automatically highlights your recommended styles below.</p>
+        <div class="scanner-actions" style="display: flex; flex-direction: column; gap: var(--space-3);">
+          <div id="scannerConsole" style="font-family: monospace; font-size: 0.9rem; color: var(--text-secondary); border-left: 3px solid var(--color-accent); padding-left: 10px; min-height: 48px; display: flex; align-items: center;">
+            Ready to scan. Click the button below to start simulation.
+          </div>
+          <div>
+            <button id="startScanBtn" class="btn btn-primary">Start AI Face Scan</button>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="scanner-card" id="scannerCard">
+          <div class="scanner-viewport">
+            <div class="scanner-overlay-grid"></div>
+            <div class="scanner-reticle"></div>
+            <img class="scanner-face-img" src="assets/images/face_oval.png" alt="Mock face outline scanning viewport">
+            <div class="scanner-bar"></div>
+            <div class="scanner-status-box">
+              <span style="display: flex; align-items: center;">
+                <span class="scanner-status-dot"></span>
+                <span id="scannerStatusText">CAMERA: INACTIVE</span>
+              </span>
+              <span id="scannerDetails">SIMULATED FEED</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script for Scanner simulation -->
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const startBtn = document.getElementById("startScanBtn");
+        const card = document.getElementById("scannerCard");
+        const consoleEl = document.getElementById("scannerConsole");
+        const statusText = document.getElementById("scannerStatusText");
+        const detailsText = document.getElementById("scannerDetails");
+        let scanning = false;
+
+        startBtn.addEventListener("click", () => {
+          if (scanning) return;
+          scanning = true;
+          startBtn.disabled = true;
+          card.classList.add("scanning");
+          statusText.textContent = "CAMERA: ACTIVE";
+          
+          const steps = [
+            { text: "Accessing camera simulation feed...", time: 600, details: "RESOLUTION 1080P" },
+            { text: "Mapping facial boundary coordinates...", time: 1300, details: "COORD: DETECTING" },
+            { text: "Measuring forehead to cheekbone width...", time: 2000, details: "MEASURING: 85%" },
+            { text: "Analyzing jawline angle and curve...", time: 2700, details: "JAW: ROUNDED" },
+            { text: "Scan complete! Oval shape detected (Perfect Balance).", time: 3400, details: "RESULT: OVAL" }
+          ];
+
+          steps.forEach((step) => {
+            setTimeout(() => {
+              consoleEl.textContent = step.text;
+              detailsText.textContent = step.details;
+              if (step.details === "RESULT: OVAL") {
+                // scanning finished
+                card.classList.remove("scanning");
+                statusText.textContent = "CAMERA: INACTIVE";
+                startBtn.disabled = false;
+                scanning = false;
+                
+                // Highlight the oval tab
+                const ovalBtn = document.getElementById("oval");
+                if (ovalBtn) {
+                  ovalBtn.click();
+                  // scroll down to tabs
+                  setTimeout(() => {
+                    ovalBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+                  }, 300);
+                }
+              }
+            }, step.time);
+          });
+        });
+      });
+    </script>
+
     <div class="face-shape-tabs scroll-tabs" data-shape-group>
       <button class="face-tab-btn active" data-shape-target="shape-round" id="round">
         <svg class="shape-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>
@@ -178,6 +264,49 @@
       </div>
       <div class="reveal">
         <div class="card-media" style="aspect-ratio:5/4;"><img src="assets/images/hero/frames_hero.png" alt="Eyeglasses measurements and fit illustration"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= HAIRSTYLE & BROW COMPATIBILITY GUIDE ================= -->
+<section style="background: var(--surface);">
+  <div class="container">
+    <div class="section-head text-center reveal">
+      <span class="eyebrow" style="justify-content:center;">Complementary Elements</span>
+      <h2 class="section-title">Hairstyle & Brow Compatibility Guide</h2>
+      <p class="section-sub">Eyewear should harmonize not only with your face shape, but also with your hair structure and eyebrow line.</p>
+    </div>
+    <div class="grid grid-3 reveal-stagger">
+      <div class="hair-guide-card">
+        <div class="hair-guide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            <path d="M12 6V2M12 22v-4"/>
+          </svg>
+        </div>
+        <h4>The Eyebrow Alignment Rule</h4>
+        <p>The top rim of your frame should follow the curve of your eyebrows without covering them entirely or intersecting them awkwardly. Arched brows sync with curved round/oval frames, while straight brows pair best with rectangular, flat-top models.</p>
+      </div>
+      <div class="hair-guide-card">
+        <div class="hair-guide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+          </svg>
+        </div>
+        <h4>Hair Volume & Frame Thickness</h4>
+        <p>Thick, voluminous hair, heavy bangs, or long locks can easily handle thick acetate and oversized statement frames. If you have short hair, a shaved head, or fine hair, thinner metal or rimless frames will keep the focus on your features without overpowering them.</p>
+      </div>
+      <div class="hair-guide-card">
+        <div class="hair-guide-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 24px; height: 24px;">
+            <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+            <path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <h4>Skin Tone & Material Warmth</h4>
+        <p>Cool skin tones (blue/pink undertones) shine with silver, gunmetal, clear, blue, and black frame materials. Warm skin tones (golden/peach undertones) are complemented by gold, honey, olive, warm tortoiseshell, and brown shades.</p>
       </div>
     </div>
   </div>

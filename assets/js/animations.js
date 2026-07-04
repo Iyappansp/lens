@@ -107,11 +107,25 @@
         const maxIndex = Math.max(slides.length - visiblePerView, 0);
         if (index > maxIndex) index = maxIndex;
         if (index < 0) index = 0;
-        const slideWidth = 100 / visiblePerView;
+        
+        const computedGap = window.getComputedStyle(track).gap;
+        const gap = computedGap && computedGap !== "normal" ? computedGap : "1.5rem";
+        const slideWidthStyle = `calc((100% - (${visiblePerView} - 1) * ${gap}) / ${visiblePerView})`;
+        slides.forEach((s) => (s.style.flex = `0 0 ${slideWidthStyle}`));
+
         const isRTL = document.documentElement.getAttribute("dir") === "rtl";
-        const offset = index * slideWidth * (isRTL ? 1 : -1);
-        track.style.transform = `translateX(${offset}%)`;
-        slides.forEach((s) => (s.style.flex = `0 0 ${slideWidth}%`));
+        const firstSlide = slides[0];
+        const slideWidthPx = firstSlide ? firstSlide.getBoundingClientRect().width : 0;
+        const gapPx = parseFloat(window.getComputedStyle(track).gap) || 0;
+
+        if (slideWidthPx > 0) {
+          const offsetPx = index * (slideWidthPx + gapPx);
+          track.style.transform = `translateX(${isRTL ? "" : "-"}${offsetPx}px)`;
+        } else {
+          const fallbackPercent = index * (100 / visiblePerView) * (isRTL ? 1 : -1);
+          track.style.transform = `translateX(${fallbackPercent}%)`;
+        }
+
         renderDots();
         if (prevBtn) prevBtn.disabled = index === 0;
         if (nextBtn) nextBtn.disabled = index >= maxIndex;

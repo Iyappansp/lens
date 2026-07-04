@@ -354,8 +354,21 @@ section{ padding: var(--space-7) 0; position:relative; }
   transform: scale(1.08);
 }
 
-.card h3{ font-size:1.2rem; margin-bottom:.5rem; }
-.card p{ color: var(--text-secondary); font-size:.95rem; line-height:1.6; }
+.card .badge {
+  margin-bottom: var(--space-2);
+  display: inline-flex;
+}
+.card h3 {
+  font-size:1.2rem;
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+.card p {
+  color: var(--text-secondary);
+  font-size:.95rem;
+  line-height:1.6;
+  margin-top: 0;
+}
 
 /* Grid system */
 .grid{ display:grid; gap: var(--space-5); }
@@ -454,6 +467,13 @@ section{ padding: var(--space-7) 0; position:relative; }
 [data-theme="dark"] .stat-item .stat-number{ color: var(--color-accent); }
 .stat-item .stat-label{ color: var(--text-secondary); font-size:.9rem; margin-top:.25rem; }
 @media (max-width:767px){ .stats-band{ grid-template-columns: repeat(2,1fr); } }
+
+/* ---------- TESTIMONIAL SLIDER ---------- */
+.testimonial-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
 
 /* ---------- TESTIMONIAL CARD ---------- */
 .testimonial-card{

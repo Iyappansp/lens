@@ -86,7 +86,7 @@
         .join("");
       return `
         <li class="nav-dropdown">
-          <a href="${item.href}" class="${isActive ? "active" : ""}">${item.label} ${ICONS.chevron}</a>
+          <a href="javascript:void(0)" class="nav-dropdown-toggle ${isActive ? "active" : ""}">${item.label} ${ICONS.chevron}</a>
           <ul class="dropdown-menu">${childLinks}</ul>
         </li>`;
     }
@@ -512,10 +512,29 @@
     // initMagneticButtons();
     initScrollReveal();
 
-    // Prevent default on main nav hash links
+    // Desktop & Tablet nav dropdown toggle handling
     document.addEventListener("click", (e) => {
-      const link = e.target.closest('.main-nav a[href="#"]');
-      if (link) {
+      const dropdownToggle = e.target.closest(".nav-dropdown > a, .nav-dropdown-toggle");
+      const dropdownItem = e.target.closest(".nav-dropdown");
+
+      if (dropdownToggle) {
+        e.preventDefault();
+        e.stopPropagation();
+        const parent = dropdownToggle.closest(".nav-dropdown");
+        if (parent) {
+          document.querySelectorAll(".nav-dropdown.is-open").forEach((nd) => {
+            if (nd !== parent) nd.classList.remove("is-open");
+          });
+          parent.classList.toggle("is-open");
+        }
+      } else if (!dropdownItem) {
+        document.querySelectorAll(".nav-dropdown.is-open").forEach((nd) => {
+          nd.classList.remove("is-open");
+        });
+      }
+
+      const hashLink = e.target.closest('.main-nav a[href="#"]');
+      if (hashLink) {
         e.preventDefault();
       }
     });

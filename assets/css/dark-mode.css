@@ -4,8 +4,8 @@
    This file covers component-specific dark adjustments.
    ========================================================= */
 
-[data-theme="dark"] .page-hero{
-  background: linear-gradient(160deg, #16242C 0%, var(--surface-alt) 75%);
+[data-theme="dark"] .page-hero::before{
+  background: linear-gradient(180deg, rgba(10, 15, 26, 0.82) 0%, rgba(10, 15, 26, 0.92) 100%);
 }
 
 [data-theme="dark"] .card-media,
